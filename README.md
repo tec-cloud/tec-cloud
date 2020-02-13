@@ -1,5 +1,5 @@
 ## 扇贝-每日一句
-博客链接：[https://blog.tecchen.xyz/api-quote.html](https://blog.tecchen.xyz/api-quote.html)
+博客链接：[https://blog.tecchen.tech/api-quote.html](https://blog.tecchen.tech/api-quote.html)
 
 #### 前言
 
@@ -22,7 +22,7 @@ API共分为几个接口：
 
 - 请求地址
 
-`https://api.tecchen.xyz/api/quote/`
+`https://api.tecchen.tech/api/quote/`
 
 - 请求方式
 
@@ -91,7 +91,7 @@ API共分为几个接口：
 
 - 请求地址
 
-`https://api.tecchen.xyz/api/quote/{requestDate}/`
+`https://api.tecchen.tech/api/quote/{requestDate}/`
 
 - 请求方式
 
@@ -99,7 +99,7 @@ API共分为几个接口：
 
 - 请求参数示例
 
-`https://api.tecchen.xyz/api/quote/2019-11-11/`
+`https://api.tecchen.tech/api/quote/2019-11-11/`
 
 - 请求参数说明
 
@@ -147,7 +147,7 @@ API共分为几个接口：
 
 - 请求地址
 
-`https://api.tecchen.xyz/api/quote/history/random/`
+`https://api.tecchen.tech/api/quote/history/random/`
 
 - 请求方式
 
@@ -196,7 +196,7 @@ API共分为几个接口：
 | originImgUrls | Array  | 原始图片链接 | 不包含摘录 |
 
 #### 小彩蛋
-浏览器访问`https://api.tecchen.xyz/quote/index.html`发现小精彩哦～～～
+浏览器访问`https://api.tecchen.tech/quote/index.html`发现小精彩哦～～～
 
 #### 通用的返回报文格式
 
@@ -233,6 +233,10 @@ API共分为几个接口：
 - 框架优化调整
 - 默认支持https接口
 - 添加eolinker的API文档和API测试
+
+#### v1.0.4
+2020-02-13
+- 域名更新
 
 未完待续……  
 持续更新……  
