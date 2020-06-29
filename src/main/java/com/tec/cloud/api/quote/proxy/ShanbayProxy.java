@@ -66,6 +66,11 @@ public class ShanbayProxy {
             JSONObject result = JSONObject.parseObject(apiResult);
             if (SUCCESS == result.getIntValue("status_code")) {
                 ShanbayDto dto = result.getObject("data", ShanbayDto.class);
+
+                if (StringUtils.isBlank(dto.getContent())) {
+                    continue;
+                }
+
                 return CommonResult.success(dto);
             }
         }
@@ -91,7 +96,7 @@ public class ShanbayProxy {
                 apiHtml = restTemplate.getForObject(quoteUrl + date, String.class);
             } catch (HttpServerErrorException e) {
                 if (HttpStatus.INTERNAL_SERVER_ERROR.equals(e.getStatusCode())) {
-                    logger.error("扇贝接口返回错误：{}", ExceptionUtil.stackTrace(e));
+                    logger.error("扇贝接口返回错误：{}-{}", date, ExceptionUtil.stackTrace(e));
                 }
             }
 

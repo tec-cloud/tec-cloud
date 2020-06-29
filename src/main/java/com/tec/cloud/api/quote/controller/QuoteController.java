@@ -11,7 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -23,7 +26,7 @@ import java.time.LocalDate;
  */
 @RestController
 @RequestMapping("/api/quote")
-@Api("每日一句")
+@Api( tags ="每日一句")
 public class QuoteController {
 
     private Logger logger = LoggerFactory.getLogger(QuoteController.class);
@@ -40,7 +43,7 @@ public class QuoteController {
      * produces 指定返回值的类型
      */
     @ApiOperation(value = "每日一句", notes = "获取格式丰富的每一句")
-    @GetMapping(value = "/", produces = "application/json;charset=UTF-8")
+    @GetMapping(value = "/")
     public CommonResult<ShanbayDto> todayQuote() {
         return quoteService.todayQuote();
     }
@@ -52,7 +55,7 @@ public class QuoteController {
      * @return
      */
     @ApiOperation(value = "历史-每日一句", notes = "获取指定日期（格式：yyyy-MM-dd）的每日一句")
-    @GetMapping(value = "/{requestDate}/", produces = "application/json;charset=UTF-8")
+    @GetMapping(value = "/{requestDate}/")
     public CommonResult<ShanbayDto> quote(@PathVariable String requestDate) {
         try {
             LocalDate formatDate = LocalDate.parse(requestDate);
@@ -68,7 +71,7 @@ public class QuoteController {
     }
 
     @ApiOperation(value = "随机获取一句历史的每日一句", notes = "随机获取一句历史的每日一句")
-    @GetMapping(value = "/history/random/", produces = "application/json;charset=UTF-8")
+    @GetMapping(value = "/history/random/")
     public CommonResult<ShanbayDto> random() {
         return quoteService.random();
     }

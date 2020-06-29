@@ -37,7 +37,7 @@ public class QuoteService {
     @Value("${api.quote.minDate}")
     private String quoteMinDate;
     // html解析backgroundImage
-    Pattern background = Pattern.compile("(.*\\()(.*)(\\);$)");
+    Pattern background = Pattern.compile("(.*\\()(.*)(\\);?$)");
     // 优化~.png@!fhd_webp和~.png?x-oss-process=image/format,jpg
     Pattern imgPattern = Pattern.compile("(.*)((\\?.*)|(@.*)$)");
 
@@ -104,17 +104,17 @@ public class QuoteService {
             if (CommonResult.SUCCESS.equals(result.getCode())) {
                 String html = result.getData().getString("html");
                 Document document = Jsoup.parse(html);
-                Elements div = document.select(".quote-preview");
+                Elements div = document.select(".quote-view");
                 logger.info("爬虫到的html：{}, {}", date, div.outerHtml());
                 String backgroundImageStyle = div.attr("style");
                 // 存入redis前纠正~.png@!fhd_webp和~.png?x-oss-process=image/format,jpg
-                String backgroundImage = background.matcher(backgroundImageStyle).replaceAll("$2");
+                final String backgroundImage = background.matcher(backgroundImageStyle).replaceAll("$2");
 
                 String content = div.select(".content").text();
 
                 String translation = div.select(".translation").text();
 
-                String contentAuthor = div.select(".content-author").text();
+                String contentAuthor = div.select(".author").text();
 
                 dto = new ShanbayDto();
                 dto.setAssignDate(date);
