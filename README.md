@@ -248,6 +248,10 @@ API共分为几个接口：
 - 迁移仓库至：https://github.com/tec-cloud/tec-cloud
 - 项目仍以"quote-api"发布
 
+#### v2.1.1
+2020-09-13
+- release v1.0
+
 未完待续……  
 持续更新……  
 感谢支持
