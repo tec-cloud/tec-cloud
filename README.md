@@ -251,6 +251,8 @@ API共分为几个接口：
 #### v2.1.1
 2020-09-13
 - release v1.0
+- code review
+- add some bugs to be fixed next release version
 
 未完待续……  
 持续更新……  
