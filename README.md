@@ -254,6 +254,10 @@ API共分为几个接口：
 - code review
 - add some bugs to be fixed next release version
 
+## 贡献者
+![Candyメ奶糖](https://avatars1.githubusercontent.com/u/25560405?s=64&v=4) tecchen@aliyun.com
+![Candyメ工会](https://avatars0.githubusercontent.com/u/45727341?s=64&v=4) 10836893@qq.com
+
 未完待续……  
 持续更新……  
 感谢支持
